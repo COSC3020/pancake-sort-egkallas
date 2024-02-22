@@ -32,3 +32,5 @@ function pancakeSort(arr) {
     }
     return arr;
 }
+
+//work cited: https://javascript.plainenglish.io/pancake-sorting-in-javascript-ecc1486e7e33
