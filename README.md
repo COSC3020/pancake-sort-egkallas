@@ -30,3 +30,7 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+Runtime in terms of comparisons is $\Theta(n^2)$ because the pancakeSort function iterates over the entire array once to check if flips are necessary, and the findMaxElement function iterates over the entire array to find the max index as well, resulting in an $n^2$ runtime.
+
+In terms of flips, the runtime is $\Theta(n)$ where $n$ is the number of elements in the array. $n$ flips will not always occur, but this is the tightest bound we can give in terms of flips.
+
