@@ -1,6 +1,6 @@
 function flip(array, n) {
-    let x = array.slice(0, n);
-    let y = array.slice(n);
+    var x = array.slice(0, n);
+    var y = array.slice(n);
     x.reverse();
     array.splice(0, n, ...x);
     array.splice(n, y.length, ...y);
