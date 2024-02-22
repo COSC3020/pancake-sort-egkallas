@@ -7,34 +7,28 @@ function flip(array, n) {
     return array;
 }
 
-function isSorted(a) {
-    for (var i = 1; i < a.length; i++) {
-        if (a[i] < a[i - 1]) {
-            return false;
+function findMaxIndex(arr, n) {
+    var maxIndex = 0;
+    for (var i = 1; i < n; i++) {
+        if (arr[i] > arr[maxIndex]) {
+            maxIndex = i;
         }
     }
-    return true;
+    return maxIndex;
 }
 
-function findMin(array, start){
+function pancakeSort(arr) {
+    if(arr.length < 2){
+        return arr;
+    }
+    for (var i = arr.length; i > 1; i--) {
+        
+        var maxIndex = findMaxIndex(arr, i);
 
-    var min = start;
-    for(var i = start + 1; i < array.length; i++){
-        if(array[min] > array[i]){
-            min = i;
+        if (maxIndex !== i - 1) {
+            flip(arr, maxIndex + 1);
+            flip(arr, i);
         }
     }
-    return min;
-}
-
-function pancakeSort(array) {
-    var endIndex = array.length - 1;
-    while (!isSorted(array)) {
-        for (var i = 0; i <= endIndex; i++) {
-            var minIndex = findMin(array, i);
-            flip(array, minIndex + 1);
-            flip(array, i + 1);
-        }
-        endIndex--; 
-    }
+    return arr;
 }
